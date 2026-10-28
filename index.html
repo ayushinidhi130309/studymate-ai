@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate AI | Smart Study Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">📚 StudyMate <span>AI</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tools">Study Tools</a>
+            <a href="#planner">Study Planner</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <p class="tagline">YOUR PERSONAL STUDY PARTNER ✨</p>
+            <h1>Study Smarter,<br><span>Not Harder.</span></h1>
+            <p class="hero-text">
+                Turn your notes into summaries, practice questions
+                and smart study plans — all in one place.
+            </p>
+            <a href="#tools" class="primary-btn">Explore Study Tools →</a>
+        </section>
+
+        <section class="tools-section" id="tools">
+            <div class="section-heading">
+                <p class="tagline">LEARN SMARTER</p>
+                <h2>Your Study Toolkit</h2>
+                <p>Everything you need to make studying easier.</p>
+            </div>
+
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3>Notes Summarizer</h3>
+                    <p>Turn long notes into short, easy-to-revise points.</p>
+                    <button onclick="openTool('summary')">Summarize Notes →</button>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">🧠</div>
+                    <h3>MCQ Generator</h3>
+                    <p>Practice multiple-choice questions from your notes.</p>
+                    <button onclick="openTool('mcq')">Generate MCQs →</button>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">📖</div>
+                    <h3>Important Questions</h3>
+                    <p>Prepare revision questions from your study material.</p>
+                    <button onclick="openTool('questions')">Get Questions →</button>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">📅</div>
+                    <h3>Study Planner</h3>
+                    <p>Organize your subjects and daily study hours.</p>
+                    <button onclick="openTool('planner')">Create Study Plan →</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="workspace" id="workspace">
+            <div class="section-heading">
+                <p class="tagline">LET'S GET STARTED</p>
+                <h2 id="workspace-title">Your Study Workspace</h2>
+                <p id="workspace-description">
+                    Choose a study tool above to get started.
+                </p>
+            </div>
+
+            <div class="workspace-box">
+                <label for="notes-input">Your Notes / Study Material</label>
+                <textarea
+                    id="notes-input"
+                    placeholder="Paste your study notes here..."
+                ></textarea>
+
+                <div class="workspace-actions">
+                    <button class="primary-btn" id="generate-btn" onclick="processNotes()">
+                        Generate Result ✨
+                    </button>
+                    <button class="secondary-btn" onclick="clearWorkspace()">
+                        Clear
+                    </button>
+                </div>
+
+                <div id="result" class="result-box" aria-live="polite">
+                    Your results will appear here.
+                </div>
+            </div>
+        </section>
+
+        <section class="planner-section" id="planner">
+            <div class="section-heading">
+                <p class="tagline">PLAN YOUR SUCCESS</p>
+                <h2>Build Your Study Plan</h2>
+                <p>Set your study goal and organize your time.</p>
+            </div>
+
+            <form id="planner-form" class="planner-form">
+                <div class="form-group">
+                    <label for="subject">Subject Name</label>
+                    <input id="subject" type="text" placeholder="e.g. Operating System" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="study-hours">Daily Study Hours</label>
+                    <input id="study-hours" type="number" min="1" max="16" value="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="exam-date">Exam Date</label>
+                    <input id="exam-date" type="date" required>
+                </div>
+
+                <button type="submit" class="primary-btn">Create My Plan 📅</button>
+            </form>
+
+            <div id="plan-result" class="result-box" aria-live="polite">
+                Your study plan will appear here.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💜 by Ayushi | StudyMate AI © 2026</p>
+        <p>Learning • Building • Growing</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
